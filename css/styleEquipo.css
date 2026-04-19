@@ -1,0 +1,490 @@
+/* ============================================
+   ASOCAVEL — team.css
+   Estilos para la página de equipo.
+   Misma paleta que styles.css (dark theme).
+   ============================================ */
+
+/* ── 1. RESET & VARIABLES ─────────────────── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg:      #0a0a0f;
+  --bg2:     #12121a;
+  --bg3:     #1a1a26;
+  --purple:  #7f77dd;
+  --purple2: #534ab7;
+  --purple3: #afa9ec;
+  --blue:    #378add;
+  --blue2:   #185fa5;
+  --blue3:   #85b7eb;
+  --border:  #2a2a3d;
+  --text:    #e8e8f0;
+  --text2:   #9090aa;
+  --text3:   #606080;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ── 2. HEADER ────────────────────────────── */
+header {
+  background: rgba(10, 10, 15, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--purple3), var(--blue3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-back {
+  color: var(--text2);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+}
+
+.nav-back:hover {
+  color: var(--purple3);
+  border-color: var(--purple3);
+}
+
+/* ── 3. LAYOUT ────────────────────────────── */
+.main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+}
+
+/* Labels y títulos reutilizables */
+.section-label {
+  font-size: 11px;
+  color: var(--purple3);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Línea separadora decorativa */
+.sep {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 2.5rem 0;
+}
+
+/* ── 4. HERO ──────────────────────────────── */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem 3rem;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(127, 119, 221, 0.12);
+  color: var(--purple3);
+  border: 1px solid rgba(127, 119, 221, 0.3);
+  font-size: 12px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 1.2rem;
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 30%, var(--purple3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  color: var(--text2);
+  font-size: 0.95rem;
+}
+
+/* ── 5. ACUERDOS ──────────────────────────── */
+.acuerdos-section { padding: 2.5rem 0; }
+
+.acuerdo-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.acuerdo {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.1rem 1.3rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text2);
+  transition: border-color 0.2s;
+}
+
+.acuerdo:hover { border-color: var(--purple2); }
+
+/* Diamante decorativo */
+.acuerdo::before {
+  content: '✦';
+  color: var(--purple3);
+  font-size: 10px;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+/* ── 6. CANALES ───────────────────────────── */
+.canales-section { padding: 2rem 0; }
+
+.canales-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.canal-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 150px;
+  transition: all 0.2s;
+}
+
+.canal-card:hover {
+  border-color: var(--purple2);
+  transform: translateY(-2px);
+}
+
+.canal-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* Colores de fondo por plataforma */
+.ci-wpp  { background: rgba(37, 211, 102, 0.12); }
+.ci-ig   { background: rgba(225, 48, 108, 0.12); }
+.ci-meet { background: rgba(55, 138, 221, 0.12); }
+
+.canal-label { font-size: 13px; font-weight: 600; color: var(--text); }
+.canal-sub   { font-size: 11px; color: var(--text3); }
+
+/* ── 7. CONTRATO ──────────────────────────── */
+.contrato-section { padding: 2rem 0; }
+
+.clausulas {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.clausula {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--purple2); /* Acento izquierdo morado */
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  padding: 1rem 1.3rem;
+  font-size: 0.88rem;
+  color: var(--text2);
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.clausula-num {
+  color: var(--purple3);
+  font-weight: 700;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ── 8. REUNIONES & RESOLUCIÓN ────────────── */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.info-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.tag-purple { background: rgba(127, 119, 221, 0.12); color: var(--purple3); }
+.tag-blue   { background: rgba(55, 138, 221, 0.12);  color: var(--blue3); }
+
+.info-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.info-card p {
+  font-size: 0.87rem;
+  color: var(--text2);
+  margin-bottom: 0.5rem;
+}
+
+/* ── 9. FLIP CARDS ────────────────────────────────────────────────
+   La técnica de flip 3D tiene 3 capas:
+
+   CAPA 1 — .flip-wrapper (perspectiva)
+     Define el punto de vista del "ojo del usuario".
+     perspective: 900px → simula que miramos el card
+     desde 90cm de distancia. Más bajo = más extremo.
+
+   CAPA 2 — .flip-card (el que rota)
+     transform-style: preserve-3d → sus hijos existen
+     en el mismo espacio 3D que él.
+     Al añadir .flipped → rotateY(180deg) con transición.
+
+   CAPA 3 — .flip-front y .flip-back (las caras)
+     position: absolute → se superponen en el mismo lugar.
+     backface-visibility: hidden → la cara que mira
+     "hacia atrás" se vuelve invisible.
+     .flip-back empieza rotada 180° → cuando el padre
+     rota 180°, ella vuelve a 0° → queda de frente.
+──────────────────────────────────────────────────────────────── */
+.pointer-section { padding: 2.5rem 0; }
+
+.flip-grid {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.75rem;
+}
+
+/* CAPA 1: Perspectiva */
+.flip-wrapper {
+  width: 170px;
+  height: 220px;
+  perspective: 900px;
+  cursor: pointer;
+}
+
+/* CAPA 2: El que rota */
+.flip-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+/* Estado volteado: añadido por JS al hacer clic */
+.flip-wrapper.flipped .flip-card {
+  transform: rotateY(180deg);
+}
+
+/* CAPA 3: Estilos compartidos de ambas caras */
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; /* Safari */
+  overflow: hidden;
+}
+
+/* CARA FRONTAL */
+.flip-front {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 1.5rem;
+  transition: border-color 0.3s;
+}
+
+.flip-wrapper:hover .flip-front {
+  border-color: var(--purple2);
+}
+
+.member-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--purple2), var(--blue2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.member-name { font-size: 0.85rem; font-weight: 700; text-align: center; color: var(--text); }
+.member-role { font-size: 0.72rem; color: var(--text3); text-align: center; margin-bottom: 6px; }
+
+.score-label { font-size: 10px; color: var(--text3); letter-spacing: 0.8px; text-transform: uppercase; }
+
+.score-value {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--purple3), var(--blue3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.score-max { font-size: 11px; color: var(--text3); }
+
+/* Barra de progreso del puntaje */
+.score-bar-wrap {
+  width: 100%;
+  height: 4px;
+  background: var(--bg3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.score-bar {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--purple2), var(--blue));
+  /* La transición anima desde width: 0% hasta el valor real */
+  transition: width 1s ease;
+}
+
+.flip-hint { font-size: 9px; color: var(--text3); margin-top: 6px; letter-spacing: 0.5px; }
+
+/* CARA TRASERA
+   transform: rotateY(180deg) → empieza "de espaldas"
+   Cuando el padre rota 180°, ella queda de frente */
+.flip-back {
+  background: var(--bg3);
+  border: 1px solid rgba(127, 119, 221, 0.25);
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Imagen de perfil que llena toda la card */
+.back-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 16px;
+}
+
+/* Overlay oscuro en la parte inferior sobre la foto */
+.back-overlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(transparent, rgba(10, 10, 15, 0.92));
+  text-align: center;
+  border-radius: 0 0 16px 16px;
+}
+
+.back-name { font-size: 0.85rem; font-weight: 700; color: #fff; }
+
+.back-tag {
+  display: inline-block;
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-top: 4px;
+  background: rgba(127, 119, 221, 0.25);
+  color: var(--purple3);
+}
+
+/* Placeholder cuando aún no hay foto */
+.no-img {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  opacity: 0.2;
+}
+
+/* ── 10. RESPONSIVE ───────────────────────── */
+@media (max-width: 640px) {
+  .info-grid { grid-template-columns: 1fr; }
+  .flip-wrapper { width: 145px; height: 190px; }
+  .canales-grid { flex-direction: column; }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team — ASOCAVEL</title>
+  <link rel="stylesheet" href="./css/styleEquipo.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="nav-inner">
+      <span class="logo">ASOCAVEL</span>
+      <a href="index.html" class="nav-back">← Volver al Home</a>
+    </div>
+  </header>
+
+  <div class="main">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-badge">Trabajo en equipo · Acuerdos · Compromisos</div>
+      <h1>Team ASOCAVEL</h1>
+      <p>Colaboración, respeto y compromiso como base de nuestro trabajo conjunto.</p>
+    </div>
+
+    <!-- ACUERDOS -->
+    <section class="acuerdos-section">
+      <div class="section-label">Normas internas</div>
+      <h2 class="section-title">Acuerdos de equipo</h2>
+      <ul class="acuerdo-list">
+        <li class="acuerdo">Trabajar unidos y en la misma medida</li>
+        <li class="acuerdo">Respetarnos unos a otros</li>
+        <li class="acuerdo">Sentido de pertenencia y responsabilidad</li>
+        <li class="acuerdo">Comunicar cada inconformidad de manera respetuosa</li>
+        <li class="acuerdo">Estar presente dentro del equipo</li>
+        <li class="acuerdo">Llegar a diferentes acuerdos por si surgen inconvenientes</li>
+      </ul>
+    </section>
+
+    <div class="sep"></div>
+
+    <!-- CANALES -->
+    <section class="canales-section">
+      <div class="section-label">Comunicación</div>
+      <h2 class="section-title">Canales de contacto</h2>
+      <div class="canales-grid">
+
+        <!-- Cuando tengas los logos reales, cambia el emoji
+             por: <img src="./img/wpp.png" alt="WhatsApp" style="width:24px"> -->
+        <div class="canal-card">
+          <div class="canal-icon ci-wpp">💬</div>
+          <div>
+            <div class="canal-label">WhatsApp</div>
+            <div class="canal-sub">Coordinación diaria</div>
+          </div>
+        </div>
+
+        <div class="canal-card">
+          <div class="canal-icon ci-ig">📸</div>
+          <div>
+            <div class="canal-label">Instagram</div>
+            <div class="canal-sub">Contenido y marca</div>
+          </div>
+        </div>
+
+        <div class="canal-card">
+          <div class="canal-icon ci-meet">🎥</div>
+          <div>
+            <div class="canal-label">Google Meet</div>
+            <div class="canal-sub">Reuniones virtuales</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <!-- CONTRATO -->
+    <section class="contrato-section">
+      <div class="section-label">Contrato interno</div>
+      <h2 class="section-title">Cláusulas de compromiso</h2>
+      <ul class="clausulas">
+        <li class="clausula">
+          <span class="clausula-num">01</span>
+          Se buscará primero una solución y escuchar al compañero que está incumpliendo con el trabajo y se crearán diferentes compromisos.
+        </li>
+        <li class="clausula">
+          <span class="clausula-num">02</span>
+          En caso de no cumplir con estos acuerdos se hablará con el docente para buscar una solución.
+        </li>
+        <li class="clausula">
+          <span class="clausula-num">03</span>
+          Se buscará la forma de que el integrante tenga una menor nota en este trabajo.
+        </li>
+        <li class="clausula">
+          <span class="clausula-num">04</span>
+          Si definitivamente no aporta nada con el trabajo, se buscará la forma de retirar a la persona del equipo.
+        </li>
+      </ul>
+    </section>
+
+    <div class="sep"></div>
+
+    <!-- REUNIONES + RESOLUCIÓN -->
+    <section>
+      <div class="section-label">Organización</div>
+      <h2 class="section-title">Cronograma & Resolución</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <span class="tag tag-purple">📅 Reuniones</span>
+          <h3>Cronograma de reuniones</h3>
+          <p>Los días martes, miércoles y viernes nos reunimos después de clase para realizar los trabajos, de 12:00 a 2:00 pm aproximadamente.</p>
+        </div>
+        <div class="info-card">
+          <span class="tag tag-blue">🤝 Conflictos</span>
+          <h3>Resolución de conflictos</h3>
+          <p>La comunicación y el respeto son la base del equipo. El conducto regular es hablar entre miembros; si no se resuelve, el docente actuará como mediador.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <!-- FLIP CARDS
+         El id="flipGrid" es el punto de anclaje
+         donde equipo.js inyecta las cards dinámicamente.
+         No necesitas escribir nada aquí adentro. -->
+    <section class="pointer-section">
+      <div class="section-label">Equipo</div>
+      <h2 class="section-title">Integrantes & Puntaje</h2>
+      <p style="color: var(--text2); font-size: 0.88rem; margin-top: 0.3rem;">
+        Haz clic en cada tarjeta para ver la foto del integrante.
+      </p>
+      <div class="flip-grid" id="flipGrid"></div>
+    </section>
+
+  </div>
+
+  <script src="./js/equipo.js"></script>
+
+</body>
+</html>

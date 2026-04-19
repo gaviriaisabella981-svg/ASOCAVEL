@@ -1,0 +1,653 @@
+/* ============================================
+   INDUSTMART — Dark Theme CSS
+   Autor: IndustMart
+   Descripción: Dark theme empresarial con
+   morados, azules y animaciones suaves.
+   ============================================ */
+
+/* ── 1. RESET & VARIABLES ───────────────────
+   Aquí definimos los colores base usando
+   CSS Custom Properties (variables). Así
+   cambiar un color afecta todo el sitio. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Fondos en capas: da profundidad al dark theme */
+  --bg:       #0a0a0f;   /* Fondo más oscuro (página) */
+  --bg2:      #12121a;   /* Fondo medio (cards) */
+  --bg3:      #1a1a26;   /* Fondo más claro (elementos internos) */
+
+  /* Paleta morado → azul (identidad IndustMart) */
+  --purple:   #7f77dd;   /* Morado principal */
+  --purple2:  #534ab7;   /* Morado oscuro (botones) */
+  --purple3:  #afa9ec;   /* Morado claro (labels, acentos) */
+  --blue:     #378add;   /* Azul principal */
+  --blue2:    #185fa5;   /* Azul oscuro */
+  --blue3:    #85b7eb;   /* Azul claro */
+
+  /* Textos */
+  --text:     #e8e8f0;   /* Texto principal (casi blanco) */
+  --text2:    #9090aa;   /* Texto secundario (gris medio) */
+  --text3:    #606080;   /* Texto terciario (gris oscuro) */
+
+  /* Bordes sutiles */
+  --border:   #2a2a3d;
+
+  /* Utilidades */
+  --accent:   #8b7fee;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  scroll-behavior: smooth;   /* Scroll suave al hacer clic en nav links */
+}
+
+
+/* ── 2. HEADER & NAV ────────────────────────
+   sticky: se queda pegado al hacer scroll.
+   backdrop-filter: efecto de vidrio esmerilado. */
+header {
+  background: rgba(10, 10, 15, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 100;            /* Por encima de todo el contenido */
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+/* Logo con gradiente de texto */
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--purple3), var(--blue3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 0.2rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--text2);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 6px 11px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;  /* Transición suave en hover */
+}
+
+nav a:hover {
+  color: var(--text);
+  background: var(--bg3);
+}
+
+
+/* ── 3. LAYOUT CONTENEDOR ───────────────────
+   max-width centra el contenido en pantallas
+   grandes. padding evita que toque los bordes. */
+.main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+}
+
+
+/* ── 4. HERO (sección principal) ────────────
+   clamp() = tamaño fluido: mínimo, ideal, máximo.
+   Es responsive sin media queries. */
+.hero {
+  text-align: center;
+  padding: 5rem 1rem 4rem;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(127, 119, 221, 0.12);
+  color: var(--purple3);
+  border: 1px solid rgba(127, 119, 221, 0.3);
+  font-size: 12px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem); /* Fluido: entre 2rem y 3.5rem */
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ffffff 30%, var(--purple3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  color: var(--text2);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.05rem;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+/* ── 5. BOTONES ─────────────────────────────
+   Dos estilos: primary (sólido) y ghost (borde) */
+.btn-primary {
+  background: var(--purple2);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background: var(--purple);
+  transform: translateY(-1px);  /* Sube 1px al hover */
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text2);
+  border: 1px solid var(--border);
+  padding: 12px 28px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-ghost:hover {
+  border-color: var(--purple3);
+  color: var(--purple3);
+}
+
+
+/* ── 6. SECCIONES ───────────────────────────
+   Etiquetas + título + subtítulo reutilizables */
+.section {
+  padding: 4rem 0;
+}
+
+/* Label pequeño de categoría encima del título */
+.section-label {
+  font-size: 12px;
+  color: var(--purple3);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.section-sub {
+  color: var(--text2);
+  max-width: 550px;
+  margin-bottom: 3rem;
+  font-size: 0.95rem;
+}
+
+
+/* ── 7. CARDS GRID (Core Focus) ─────────────
+   auto-fit + minmax: genera columnas automáticas
+   responsive sin media queries extra. */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  /* Animación de entrada (ver @keyframes abajo) */
+  animation: fadeUp 0.5s ease both;
+  animation-play-state: paused; /* JS la activa cuando entra al viewport */
+}
+
+/* Línea de color en la parte superior al hover */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--purple2), var(--blue2));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--purple2);
+  transform: translateY(-4px);  /* Efecto "flotar" */
+}
+
+.card:hover::before {
+  opacity: 1;  /* Muestra la línea superior */
+}
+
+/* Delays escalonados para animación en cascada */
+.card:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2) { animation-delay: 0.10s; }
+.card:nth-child(3) { animation-delay: 0.15s; }
+.card:nth-child(4) { animation-delay: 0.20s; }
+
+.card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  font-size: 20px;
+}
+
+/* Variantes de color para los íconos */
+.icon-purple { background: rgba(127, 119, 221, 0.15); color: var(--purple3); }
+.icon-blue   { background: rgba(55, 138, 221, 0.15);  color: var(--blue3); }
+
+.card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.card p {
+  font-size: 0.88rem;
+  color: var(--text2);
+  line-height: 1.6;
+}
+
+
+/* ── 8. VISION CARD ─────────────────────────
+   Card destacada con fondo de gradiente sutil */
+.vision-card {
+  background: linear-gradient(
+    135deg,
+    rgba(83, 74, 183, 0.15),
+    rgba(24, 95, 165, 0.10)
+  );
+  border: 1px solid rgba(127, 119, 221, 0.2);
+  border-radius: 16px;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;  /* En móvil se apila verticalmente */
+}
+
+.vision-icon {
+  font-size: 4rem;
+  flex-shrink: 0;  /* No se encoge aunque haya poco espacio */
+}
+
+.vision-text h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.vision-text p {
+  color: var(--text2);
+  font-size: 0.95rem;
+  max-width: 560px;
+}
+
+
+/* ── 9. CANVAS (con toggle JS) ──────────────
+   El corazón del JS: max-height animado.
+   Truco: max-height: 0 + overflow: hidden = oculto
+   max-height: 600px + transition = desplegado con animación */
+.canvas-section {
+  padding: 4rem 0;
+}
+
+.toggle-btn {
+  background: var(--bg3);
+  color: var(--purple3);
+  border: 1px solid rgba(127, 119, 221, 0.3);
+  padding: 13px 28px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toggle-btn:hover {
+  background: rgba(127, 119, 221, 0.1);
+  border-color: var(--purple);
+}
+
+/* Rota el chevron cuando el botón tiene clase .open */
+.toggle-btn .chevron {
+  transition: transform 0.4s ease;
+  font-style: normal;
+  font-size: 16px;
+  display: inline-block;
+}
+
+.toggle-btn.open .chevron {
+  transform: rotate(180deg);  /* ▼ → ▲ */
+}
+
+/* El contenedor colapsable */
+.canvas-collapse {
+  overflow: hidden;
+  max-height: 0;             /* Oculto por defecto */
+  opacity: 0;
+  /* cubic-bezier da una curva de aceleración más natural que ease */
+  transition:
+    max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity    0.4s ease;
+}
+
+.canvas-collapse.open {
+  max-height: 600px;         /* Suficiente para mostrar todo el contenido */
+  opacity: 1;
+}
+
+.canvas-inner {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin-top: 1.25rem;
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.canvas-item {
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg3);
+}
+
+.canvas-item h4 {
+  font-size: 0.8rem;
+  color: var(--purple3);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.canvas-item p {
+  font-size: 0.85rem;
+  color: var(--text2);
+}
+
+
+/* ── 10. DOFA ───────────────────────────────
+   Grid 2x2. Cada cuadrante con su color semántico */
+.dofa-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.dofa-card {
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  border: 1px solid;  /* El color se pone en la clase específica */
+}
+
+/* Colores por cuadrante (fondo + borde) */
+.dofa-F { background: rgba(127, 119, 221, 0.08); border-color: rgba(127, 119, 221, 0.25); }
+.dofa-O { background: rgba(55, 138, 221, 0.08);  border-color: rgba(55, 138, 221, 0.25); }
+.dofa-D { background: rgba(239, 159, 39, 0.07);  border-color: rgba(239, 159, 39, 0.2); }
+.dofa-A { background: rgba(226, 75, 74, 0.07);   border-color: rgba(226, 75, 74, 0.2); }
+
+.dofa-label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+/* Color del label por cuadrante */
+.l-F { color: #afa9ec; }
+.l-O { color: var(--blue3); }
+.l-D { color: #ef9f27; }
+.l-A { color: #e24b4a; }
+
+.dofa-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.dofa-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dofa-card li {
+  font-size: 0.87rem;
+  color: var(--text2);
+  padding: 4px 0;
+  display: flex;
+  gap: 8px;
+}
+
+/* Flecha decorativa antes de cada item */
+.dofa-card li::before {
+  content: '›';
+  color: var(--text3);
+  flex-shrink: 0;
+}
+
+
+/* ── 11. SOSTENIBILIDAD & VIABILIDAD ────────
+   Dos columnas con cards informativas */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.info-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+}
+
+/* Badges de categoría */
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.tag-green { background: rgba(99, 153, 34, 0.15); color: #97c459; }
+.tag-blue  { background: rgba(55, 138, 221, 0.12); color: var(--blue3); }
+
+.info-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.info-card p {
+  font-size: 0.88rem;
+  color: var(--text2);
+  line-height: 1.7;
+}
+
+
+/* ── 12. SEPARADOR ──────────────────────────
+   Línea que desaparece en los extremos */
+.sep {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 1rem 0;
+}
+
+
+/* ── 13. FOOTER ─────────────────────────────*/
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem;
+  text-align: center;
+  color: var(--text3);
+  font-size: 13px;
+  background: var(--bg);
+}
+
+
+/* ── 14. ANIMACIONES ────────────────────────
+   fadeUp: entra desde abajo con opacidad 0 → 1 */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ── 15. POTENCIALIDADES (para tus imágenes) ─
+   Grid de cards que están listas para recibir img */
+#potencialidades {
+  padding: 4rem 0;
+}
+
+.pot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.cardPot {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardPot:hover {
+  transform: translateY(-4px);
+  border-color: var(--purple2);
+}
+
+/* La imagen dentro de cardPot ocupa toda la card */
+.cardPot img.pot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* ── 16. RESPONSIVE ─────────────────────────
+   En pantallas pequeñas, todo en 1 columna */
+@media (max-width: 768px) {
+  .dofa-grid,
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .vision-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    display: none;  /* En móvil puedes hacer un menú hamburguesa luego */
+  }
+
+  .hero {
+    padding: 3rem 1rem 2.5rem;
+  }
+
+  .main {
+    padding: 1rem 1rem 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .canvas-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASOCAVEL — Marketing Industrial B2B</title>
+
+  <link rel="stylesheet" href="./css/styleMain.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="nav-inner">
+      <a href="#home" class="logo">ASOCAVEL</a>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#core">Servicios</a></li>
+          <li><a href="#vision">Visión</a></li>
+          <li><a href="#canvas">Canvas</a></li>
+          <li><a href="#potencialidades">Potencialidades</a></li>
+          <li><a href="#dofa">DOFA</a></li>
+          <li><a href="#sostenibilidad">Sostenibilidad</a></li>
+          <li><a href="#viabilidad">Viabilidad</a></li>
+          <li><a href="equipo.html">Equipo</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="main">
+
+    <!-- ═══════════════════════════════════
+         HERO — Sección principal
+    ═══════════════════════════════════ -->
+    <section id="home" class="hero">
+      <div class="hero-badge">B2B · Industrial Marketing · Colombia</div>
+      <h1>Transformación Digital para el Sector Industrial</h1>
+      <p>Agencia boutique especializada en marketing B2B y transformación digital. Conectamos el sector industrial colombiano con estrategias digitales de alto impacto.</p>
+      <div class="hero-btns">
+        <a href="#canvas" class="btn-primary">Ver modelo Canvas</a>
+        <a href="#dofa" class="btn-ghost">Análisis DOFA</a>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════
+         CORE FOCUS — Cards de servicios
+    ═══════════════════════════════════ -->
+    <section id="core" class="section">
+      <div class="section-label">Core Focus</div>
+      <h2 class="section-title">¿Qué hacemos?</h2>
+      <p class="section-sub">Combinamos ingeniería industrial con estrategia digital para impulsar el crecimiento B2B.</p>
+
+      <!-- card-grid usa CSS Grid con auto-fit para ser responsive -->
+      <div class="card-grid">
+
+        <div class="card">
+          <div class="card-icon icon-purple">📈</div>
+          <h3>Strategic B2B Growth</h3>
+          <p>Funnels de marketing de alto impacto para proveedores industriales, manufactureros y técnicos.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon icon-blue">🤖</div>
+          <h3>Digital Innovation</h3>
+          <p>IA y automatización para optimizar operaciones comerciales y generación de leads cualificados.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon icon-purple">🔍</div>
+          <h3>Technical SEO & SEM</h3>
+          <p>Visibilidad online para conectar proveedores especializados con compradores globales y locales.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon icon-blue">🏭</div>
+          <h3>Consulting Industry 4.0</h3>
+          <p>Guiamos empresas en la transición digital modernizando procesos de venta y presencia online.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+
+    <!-- ═══════════════════════════════════
+         VISION
+    ═══════════════════════════════════ -->
+    <section id="vision" class="section">
+      <div class="section-label">Visión</div>
+      <div class="vision-card">
+        <div class="vision-icon">🚀</div>
+        <div class="vision-text">
+          <h2>Nuestra Visión</h2>
+          <p>Empoderar el sector industrial mediante decisiones basadas en datos y tecnologías innovadoras, garantizando un crecimiento sostenible en una economía global cada vez más digital.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+
+    <!-- ═══════════════════════════════════
+         CANVAS — Con toggle JS
+         El botón llama a toggleCanvas()
+         que está en main.js
+    ═══════════════════════════════════ -->
+    <section id="canvas" class="canvas-section">
+      <div class="section-label">Modelo de Negocio</div>
+      <h2 class="section-title">Business Model Canvas</h2>
+      <p class="section-sub">Explora los pilares del modelo de negocio de IndustMart.</p>
+
+      <!-- onclick llama a la función en main.js -->
+      <button class="toggle-btn" id="canvasBtn" onclick="toggleCanvas()">
+        <span class="btn-text">Ver Canvas completo</span>
+        <i class="chevron">▼</i>
+      </button>
+
+      <!-- Este div se expande/colapsa via JS + CSS -->
+      <div class="canvas-collapse" id="canvasBox">
+        <div class="canvas-inner">
+
+          <div class="canvas-item">
+            <h4>Propuesta de Valor</h4>
+            <p>Marketing industrial especializado + transformación digital B2B integrada.</p>
+          </div>
+
+          <div class="canvas-item">
+            <h4>Segmentos de Clientes</h4>
+            <p>PYMES industriales, manufactureras y de servicios técnicos en Colombia.</p>
+          </div>
+
+          <div class="canvas-item">
+            <h4>Canales</h4>
+            <p>Web, LinkedIn, SEO técnico, referidos y alianzas estratégicas sectoriales.</p>
+       
+          </div>
+
+          <div class="canvas-item">
+            <h4>Relaciones con Clientes</h4>
+            <p>Consultoría personalizada, soporte dedicado y reportes mensuales de performance.</p>
+          </div>
+
+          <div class="canvas-item">
+            <h4>Actividades Clave</h4>
+            <p>Diseño de funnels, automatización, creación de contenido técnico y analítica de datos.</p>
+          </div>
+
+          <div class="canvas-item">
+            <h4>Recursos Clave</h4>
+            <p>Equipo experto en industria + herramientas de IA y plataformas de marketing digital.</p>
+          </div>
+
+          <div class="canvas-item">
+            <h4>Socios Clave</h4>
+            <p>Plataformas tecnológicas, cámaras de comercio y proveedores de datos industriales.</p>
+          </div>
+
+          <div class="canvas-item">
+            <h4>Estructura de Costos</h4>
+            <p>Talento humano, licencias de software, infraestructura digital y desarrollo de contenido.</p>
+          </div>
+
+          <div class="canvas-item">
+            <h4>Fuentes de Ingresos</h4>
+            <p>Retainer mensual, proyectos por demanda y comisiones por leads generados.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+
+    <!-- ═══════════════════════════════════
+         POTENCIALIDADES
+         Listo para recibir tus imágenes.
+         Solo reemplaza el src="" con la
+         ruta real de cada imagen.
+    ═══════════════════════════════════ -->
+    <section id="potencialidades" class="section">
+      <div class="section-label">Potencialidades</div>
+      <h2 class="section-title">Nuestros diferenciadores</h2>
+      <div class="pot-grid">
+
+        <!-- Reemplaza src con tu imagen real -->
+        <div class="cardPot"><img src="./img/pot1.jpg" alt="Potencialidad 1" class="pot"></div>
+        <div class="cardPot"><img src="./img/pot2.jpg" alt="Potencialidad 2" class="pot"></div>
+        <div class="cardPot"><img src="./img/pot3.jpg" alt="Potencialidad 3" class="pot"></div>
+        <div class="cardPot"><img src="./img/pot4.jpg" alt="Potencialidad 4" class="pot"></div>
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+
+    <!-- ═══════════════════════════════════
+         DOFA — Matriz 2x2
+    ═══════════════════════════════════ -->
+    <section id="dofa" class="section">
+      <div class="section-label">Análisis Estratégico</div>
+      <h2 class="section-title">Matriz DOFA</h2>
+      <p class="section-sub">Evaluación interna y del entorno competitivo.</p>
+
+      <div class="dofa-grid">
+
+        <div class="dofa-card dofa-F">
+          <div class="dofa-label l-F">Fortalezas</div>
+          <h3>Lo que nos hace fuertes</h3>
+          <ul>
+            <li>Especialización en sector industrial B2B</li>
+            <li>Equipo con background técnico y digital</li>
+            <li>Metodología propia de growth marketing</li>
+            <li>Enfoque en métricas y ROI medible</li>
+          </ul>
+        </div>
+
+        <div class="dofa-card dofa-O">
+          <div class="dofa-label l-O">Oportunidades</div>
+          <h3>El mercado nos abre puertas</h3>
+          <ul>
+            <li>Baja digitalización en PYMES industriales</li>
+            <li>Crecimiento de e-commerce B2B en LATAM</li>
+            <li>Demanda creciente de IA en manufactura</li>
+            <li>Tratados de libre comercio → exportaciones</li>
+          </ul>
+        </div>
+
+        <div class="dofa-card dofa-D">
+          <div class="dofa-label l-D">Debilidades</div>
+          <h3>Áreas de mejora interna</h3>
+          <ul>
+            <li>Equipo pequeño para alta demanda</li>
+            <li>Portafolio en construcción (casos de éxito)</li>
+            <li>Dependencia de herramientas de terceros</li>
+            <li>Presencia de marca aún limitada</li>
+          </ul>
+        </div>
+
+        <div class="dofa-card dofa-A">
+          <div class="dofa-label l-A">Amenazas</div>
+          <h3>Factores externos de riesgo</h3>
+          <ul>
+            <li>Agencias generalistas con precios bajos</li>
+            <li>Volatilidad económica en Colombia</li>
+            <li>Cambios en algoritmos SEO/SEM</li>
+            <li>Competencia de plataformas SaaS DIY</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+
+    <!-- ═══════════════════════════════════
+         SOSTENIBILIDAD & VIABILIDAD
+    ═══════════════════════════════════ -->
+    <section id="sostenibilidad" class="section">
+      <div class="section-label">Proyección</div>
+      <h2 class="section-title">Sostenibilidad & Viabilidad</h2>
+      <p class="section-sub">El modelo de IndustMart está diseñado para crecer de forma responsable.</p>
+
+      <div class="two-col">
+
+        <div class="info-card" id="viabilidad">
+          <span class="tag tag-green">♻ Sostenibilidad</span>
+          <h3>Comprometidos con el futuro</h3>
+          <p>Promovemos prácticas ecoamigables en el sector industrial. Ayudamos a nuestros clientes a adoptar tecnologías verdes y reducir su huella de carbono a través de estrategias de marketing que destacan su responsabilidad ambiental.</p>
+        </div>
+
+        <div class="info-card">
+          <span class="tag tag-blue">📊 Viabilidad</span>
+          <h3>Modelo rentable a largo plazo</h3>
+          <p>Nuestro modelo de negocio se basa en la creciente demanda de transformación digital en el sector industrial. Servicios especializados y alianzas estratégicas aseguran flujo constante de clientes, mientras la innovación continua nos mantiene relevantes.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /main -->
+
+
+  <!-- ═══════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════ -->
+  <footer>
+    <p>© 2025 IndustMart · Marketing Industrial & Transformación Digital B2B · Colombia</p>
+  </footer>
+
+
+  <!-- El JS va al final del body, DESPUÉS del HTML.
+       Así el navegador ya cargó todo el DOM antes
+       de que el script intente manipularlo. -->
+  <script src="./js/main.js"></script>
+
+</body>
+</html>
